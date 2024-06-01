@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Band</title>
+    <!-- links -->
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <button type="button" class="burger-menu"><i class="fi fi-rr-menu-burger"></i></button>
+        <div class="nav-left">
+            <a href="#">Home</a>
+            <a href="#">Band</a>
+            <a href="#">Tour</a>
+            <a href="#">Contact</a>
+            <button type="button" class="dropdown" onmouseover="show()" onmouseout="hide()">More <i class="fi fi-rs-angle-small-right"></i>
+                <div id="dropdown-menu">
+                    <a href="#">Merchandise</a>
+                    <a href="#">Extras</a>
+                    <a href="#">Media</a>
+                </div>
+            </button>
+            
+        </div>
+        <div class="search">
+            <div class="wave-group">
+                <input required="" type="text" class="input">
+                <span class="bar"></span>
+                <label class="label">
+                    <span class="label-char" style="--index: 0">S</span>
+                    <span class="label-char" style="--index: 6">e</span>
+                    <span class="label-char" style="--index: 4">a</span>
+                    <span class="label-char" style="--index: 2">r</span>
+                    <span class="label-char" style="--index: 5">c</span>
+                    <span class="label-char" style="--index: 3">h</span>
+                    <span class="label-char" style="--index: 1">:</span>
+
+                </label>
+            </div>
+            <button type="button"><i class="fi fi-rs-search"></i></button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="untitled">
+            <div class="untitled__slides">
+              <div class="untitled__slide">
+                <div class="untitled__slideBg"></div>
+                <div class="untitled__slideContent">
+                  <span>Chicago</span>
+                  <p>Thank you, Chicago - A night we won't forget.</p>
+                </div>
+              </div>
+              <div class="untitled__slide">
+                <div class="untitled__slideBg"></div>
+                <div class="untitled__slideContent">
+                  <span>Los Angeles</span>
+                  <p>We had the best time playing at Venice Beach!</p>
+                </div>
+              </div>
+              <div class="untitled__slide">
+                <div class="untitled__slideBg"></div>
+                <div class="untitled__slideContent">
+                  <span>New York</span>
+                  <p>The atmosphere in New York is lorem ipsum.</p>
+                </div>
+              </div>
+              <div class="untitled__slide">
+                <div class="untitled__slideBg"></div>
+                <div class="untitled__slideContent">
+                  <span>Isekai</span>
+                  <p>We just had a wonderful time in Isekai world</p>
+                </div>
+              </div>
+            </div>
+            <div class="untitled__shutters"></div>
+          </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
