@@ -2,22 +2,22 @@
 @import url(./slideshow.css);
 // var
 $lato: "Lato", sans-serif;
-$t: 2.5s;
-$e1: cubic-bezier(0.8, 0.00, 0.1, 1);
-$e2: cubic-bezier(0.600, 0.040, 0.980, 0.335);
-$er: linear;
-$color: black;
-$slides: 4;
-$images: url(./assets/chicago.jpg) url(./assets/la.jpg) url(./assets/ny.jpg) url(./assets/chill.jpg);
 
+.white {
+    color: white;
+}
 
 // code
+html {
+    overflow-x: clip !important;
+}
+
 * {
     font-family: $lato;
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0px;
 }
 
@@ -30,278 +30,249 @@ body {
     overflow-x: hidden;
 }
 
-.untitled {
-    position: absolute;
-    height: 95vh;
-    width: 100%;
-    overflow: hidden;
-    z-index: -1;
-    @keyframes rotateHue {
-        from {
-            filter: hue-rotate(0deg);
-        }
 
-        to {
-            filter: hue-rotate(0deg);
 
-        }
-    }
-
-    animation: rotateHue infinite $t*$slides*2 linear;
-    animation-delay: $t/4;
-
-    &__shutters {
-        position: absolute;
-        height: 150vmax;
-        width: 150vmax;
-        left: calc(50% - 75vmax);
-        top: calc(50% - 75vmax);
-        pointer-events: none;
-        z-index: 2;
-
-        @keyframes rotateFrame {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(180deg);
-            }
-        }
-
-        animation: rotateFrame $t*4 $er infinite;
-
-        &:before,
-        &:after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            left: 50%;
-            transform: translate3d(-50%, 0, 0);
-            background-color: $color;
-            pointer-events: auto;
-        }
-
-        &:before {
-            bottom: 50%;
-
-            @keyframes openTop {
-                0% {
-                    transform: translate3d(-50%, 0, 0);
-                    animation-timing-function: $e1;
-                }
-
-                40% {
-                    transform: translate3d(-50%, -65vmax, 0);
-                    animation-timing-functon: $e2;
-                }
-
-                70% {
-                    transform: translate3d(-50%, -65vmax, 0);
-                    animation-timing-functon: $e2;
-                }
-
-                100% {
-                    transform: translate3d(-50%, 0, 0);
-                    animation-timing-function: $e2;
-                }
-            }
-
-            animation: openTop $t*2 infinite;
-        }
-
-        &:after {
-            top: 50%;
-
-            @keyframes openBottom {
-                0% {
-                    transform: translate3d(-50%, 0, 0);
-                    animation-timing-function: $e1;
-                }
-
-                40% {
-                    transform: translate3d(-50%, 65vmax, 0);
-                    animation-timing-functon: $e2;
-                }
-
-                70% {
-                    transform: translate3d(-50%, 65vmax, 0);
-                    animation-timing-functon: $e2;
-                }
-
-                100% {
-                    transform: translate3d(-50%, 0, 0);
-                    animation-timing-function: $e2;
-                }
-            }
-
-            animation: openBottom $t*2 infinite;
-        }
-    }
-
-    &__slides {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-color: $color;
-    }
-
-    &__slide {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-
-        @keyframes showHideSlide {
-            0% {
-                opacity: 1;
-                pointer-events: auto;
-                z-index: 1;
-            }
-
-            #{100% / $slides} {
-                opacity: 0;
-                pointer-events: none;
-                z-index: -1;
-            }
-
-            100% {
-                opacity: 0;
-                pointer-events: none;
-                z-index: -1;
-            }
-        }
-
-        animation: showHideSlide infinite $t*$slides*2 steps(1);
-
-        @for $i from 1 through $slides {
-            &:nth-child(#{$i}) {
-                animation-delay: $t * ($i - 1) * 2;
-
-                .untitled__slideBg {
-                    background-image: nth($images, $i);
-                }
-            }
-        }
-    }
-
-    &__slideBg {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-size: cover;
-        background-position: center;
-        background-blend-mode: hard-light;
-        opacity: 1;
-        z-index: -1;
-
-        @keyframes bgInOut {
-            0% {
-                transform: rotate(-45deg) scale(1.1);
-                animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-            }
-
-            33% {
-                transform: rotate(0deg);
-            }
-
-            50% {
-                transform: rotate(0deg);
-            }
-
-            66% {
-                transform: rotate(0deg);
-                animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-            }
-
-            100% {
-                transform: rotate(45deg) scale(0.9);
-            }
-        }
-
-        animation: bgInOut $t*4 -$t*2 infinite;
-    }
-
-    &__slideContent {
-        position: absolute;
-        top: 88%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        line-height: 0.8;
-        z-index: 2;
-        opacity: 1;
-        mix-blend-mode: lighten;
-        text-align: center;
-
-        span {
-            display: block;
-            font-family: $lato;
-            font-size: 150%;
-        }
-    }
-}
-
-.slideshowOverlay{
+.slideshowOverlay {
     height: 95vh;
     box-sizing: border-box;
 }
 
-#band{
+#band {
     display: flex;
     justify-content: center;
 }
 
-.max-width{
+.max-width {
     width: 800px;
     text-align: center;
     padding: 120px 26px;
-    p{
+
+    p {
         width: 100%;
     }
 
 }
-.title{
+
+.title {
     font-size: 200%;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin: 0;
 }
-.info{
+
+.info {
     text-align: justify;
 }
-.subtitle{
+
+.subtitle {
     font-style: italic;
     color: grey;
+    margin: 20px 0 30px 0;
 }
 
-.band-mem{
+.band-mem {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.items{
+.items {
     display: flex;
     flex-direction: column;
     align-items: center;
-    img{
+
+    img {
         width: 60%;
         border-radius: 5px;
     }
 }
 
-#tour{
+#tour {
     background-color: black;
+    display: flex;
+    justify-content: center;
 }
 
+.tickets {
+    width: 100%;
+    background-color: white;
+    list-style-type: none;
+    text-align: start;
+    padding: 0;
+
+    li {
+        padding: 10px 15px;
+        position: relative;
+        border-bottom: 1px solid rgb(216, 216, 216);
+    }
+
+    span {
+        color: white;
+        background-color: #f44336;
+        padding: 1px 8px;
+        margin-left: 16px;
+    }
+
+    .num {
+        background: #000;
+        border-radius: 100px;
+        position: absolute;
+        right: 0;
+        margin-right: 30px;
+    }
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-items {
+    background-color: #fff;
+    text-align: start;
+    margin: 10px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.card-content {
+    margin: 10px 15px;
+    position: relative;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-date {
+    color: gray;
+    margin: 0;
+}
+
+.fancy {
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+    transform: scale(70%) translateX(-35px);
+
+
+    &::before {
+        content: " ";
+        width: 1.5625rem;
+        height: 2px;
+        background: black;
+        top: 50%;
+        left: 1.5em;
+        position: absolute;
+        transform: translateY(-50%);
+        transform-origin: center;
+        transition: background 0.3s linear, width 0.3s linear;
+    }
+
+    .text {
+        font-size: 1.125em;
+        line-height: 1.33333em;
+        padding-left: 2em;
+        display: block;
+        text-align: left;
+        transition: all 0.3s ease-in-out;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+    }
+
+    .top-key {
+        height: 2px;
+        width: 1.5625rem;
+        top: -2px;
+        left: 0.625rem;
+        position: absolute;
+        background: #e8e8e8;
+        transition: width 0.5s ease-out, left 0.3s ease-out;
+
+    }
+
+    .bottom-key-1 {
+        height: 2px;
+        width: 1.5625rem;
+        right: 1.875rem;
+        bottom: -2px;
+        position: absolute;
+        background: #e8e8e8;
+        transition: width 0.5s ease-out, right 0.3s ease-out;
+    }
+
+    .bottom-key-2 {
+        height: 2px;
+        width: 0.625rem;
+        right: 0.625rem;
+        bottom: -2px;
+        position: absolute;
+        background: #e8e8e8;
+        transition: width 0.5s ease-out, right 0.3s ease-out;
+    }
+
+    &:hover {
+        color: white;
+        background: black;
+
+        .text {
+            color: white;
+            padding-left: 1.5em;
+        }
+
+        .top-key {
+            left: -2px;
+            width: 0px;
+        }
+
+        .bottom-key-1,
+        .bottom-key-2 {
+            right: 0;
+            width: 0;
+        }
+    }
+
+    &:hover::before {
+        width: 0.9375rem;
+        background: white;
+    }
+}
+
+
 @media screen and (max-width: 550px) {
-    .band-mem{
+    .band-mem {
         flex-wrap: wrap;
+    }
+
+    .max-width {
+        width: 100%;
+    }
+
+
+}
+@media screen and (max-width: 768px) {
+    .card{
+        flex-wrap: wrap;
+    }
+    .card-items{
+        margin: 10px 0;
     }
 }

@@ -11,7 +11,7 @@ $navblack: rgb(37, 37, 37);
     flex-wrap: wrap;
     background-color: $navblack;
     overflow: hidden;
-    z-index: 0;
+    z-index: 3;
     transition: 0.5s;
     a,
     button {
