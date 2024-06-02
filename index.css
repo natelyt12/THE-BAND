@@ -2,6 +2,7 @@
 @import url(./slideshow.css);
 * {
   font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -19,7 +20,7 @@ body {
 
 .untitled {
   position: absolute;
-  height: 95%;
+  height: 95vh;
   width: 100%;
   overflow: hidden;
   z-index: -1;
@@ -212,4 +213,63 @@ body {
   font-size: 150%;
 }
 
-/*# sourceMappingURL=index.css.map */
+.slideshowOverlay {
+  height: 95vh;
+  box-sizing: border-box;
+}
+
+#band {
+  display: flex;
+  justify-content: center;
+}
+
+.max-width {
+  width: 800px;
+  text-align: center;
+  padding: 120px 26px;
+}
+.max-width p {
+  width: 100%;
+}
+
+.title {
+  font-size: 200%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.info {
+  text-align: justify;
+}
+
+.subtitle {
+  font-style: italic;
+  color: grey;
+}
+
+.band-mem {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.items img {
+  width: 60%;
+  border-radius: 5px;
+}
+
+#tour {
+  background-color: black;
+}
+
+@media screen and (max-width: 550px) {
+  .band-mem {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=index.css.map */

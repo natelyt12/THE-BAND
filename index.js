@@ -1,5 +1,5 @@
+var header = document.querySelector(".navbar");
 document.getElementsByClassName('burger-menu')[0].addEventListener("click", function () {
-    var header = document.querySelector(".navbar");
     header.classList.toggle('expand');
 })
 

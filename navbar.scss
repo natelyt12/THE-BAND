@@ -12,6 +12,7 @@ $navblack: rgb(37, 37, 37);
     background-color: $navblack;
     overflow: hidden;
     z-index: 0;
+    transition: 0.5s;
     a,
     button {
         color: white;
@@ -163,7 +164,6 @@ $navblack: rgb(37, 37, 37);
 }
 
 .expand {
-    transition: 0.5s;
     height: 300px;
 }
 

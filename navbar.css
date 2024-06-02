@@ -10,6 +10,7 @@
   background-color: rgb(37, 37, 37);
   overflow: hidden;
   z-index: 0;
+  transition: 0.5s;
 }
 .navbar a,
 .navbar button {
@@ -137,6 +138,7 @@
   top: 0;
   left: 100%;
   background-color: rgb(37, 37, 37);
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0;
   display: flex;
@@ -146,17 +148,18 @@
 }
 #dropdown-menu a {
   color: white;
+  height: -moz-fit-content;
   height: fit-content;
 }
 
 .expand {
-  transition: 0.5s;
   height: 300px;
 }
 
 @media screen and (max-width: 760px) {
   button,
   a {
+    height: -moz-fit-content !important;
     height: fit-content !important;
     display: flex;
   }
@@ -179,6 +182,4 @@
   #dropdown-menu {
     position: static;
   }
-}
-
-/*# sourceMappingURL=navbar.css.map */
+}/*# sourceMappingURL=navbar.css.map */
