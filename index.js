@@ -16,3 +16,11 @@ function hide() {
     dropdown.style.transform = 'translateY(50px)'
     search.style.transform = 'translateY(0px)'
 }
+
+function popup() {
+    document.getElementsByClassName('popup-bg')[0].style.display = 'block'
+}
+
+function cl() {
+    document.getElementsByClassName('popup-bg')[0].style.display = 'none'
+}

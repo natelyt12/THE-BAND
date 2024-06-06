@@ -55,8 +55,8 @@
       <button type="button"><i class="fi fi-rs-search"></i></button>
     </div>
   </div>
+
   <div class="container">
-    <!-- Slideshow -->
     <div class="untitled">
       <div class="untitled__slides">
         <div class="untitled__slide">
@@ -90,6 +90,7 @@
       </div>
       <div class="untitled__shutters"></div>
     </div>
+
     <div class="slideshowOverlay">
     </div>
 
@@ -124,6 +125,23 @@
 
       </div>
     </div>
+
+    <div class="popup-bg">
+        <div class="popup-container">
+          <div class="header">
+            <p class="title" style="text-transform: none;"><i class="fi fi-rs-ticket-alt"></i>Tickets</p>
+            <button type="button" onclick="cl()"><i class="fi fi-rs-circle-xmark"></i></button>
+          </div>
+          <form class="pay-form">
+            <label for="tickets">Tickets, $15 per person</label>
+            <input type="number" placeholder="How many?" name="tickets" required>
+            <label for="email">Send to</label>
+            <input type="email" name="email" required>
+            <button type="submit">Pay</button>
+          </form>
+        </div>
+    </div>
+
     <div id="tour">
       <div class="max-width">
         <p class="title white">Tour dates</p>
@@ -143,27 +161,31 @@
               <p class="card-title">New York</p>
               <p class="card-date">Fri 27 Nov 2016</p>
               <p class="card-info">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-              <a class="fancy" href="#">
-                <span class="top-key"></span>
-                <span class="text">Buy Tickets</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
-              </a>
+              <button class="buy" onclick="popup()">
+                Buy tickets
+                <svg class="svgIcon" viewBox="0 0 576 512">
+                  <path
+                    d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+                  </path>
+                </svg>
+              </button>
             </div>
           </div>
 
-          <div class="card-items" id="">
+          <div class="card-items">
             <img src="./assets/paris.jpg">
             <div class="card-content">
               <p class="card-title">Paris</p>
               <p class="card-date">Sat 28 Nov 2016</p>
               <p class="card-info">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-              <a class="fancy" href="#">
-                <span class="top-key"></span>
-                <span class="text">Buy Tickets</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
-              </a>
+              <button class="buy" onclick="popup()">
+                Buy tickets
+                <svg class="svgIcon" viewBox="0 0 576 512">
+                  <path
+                    d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+                  </path>
+                </svg>
+              </button>
             </div>
           </div>
 
@@ -173,17 +195,28 @@
               <p class="card-title">New York</p>
               <p class="card-date">Sun 29 Nov 2016</p>
               <p class="card-info">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-              <a class="fancy" href="#">
-                <span class="top-key"></span>
-                <span class="text">Buy Tickets</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
-              </a>
+              <button class="buy" onclick="popup()">
+                Buy tickets
+                <svg class="svgIcon" viewBox="0 0 576 512">
+                  <path
+                    d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+                  </path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
+
       </div>
     </div>
+
+    <div id="contact">
+      <div class="max-width">
+        <p class="title">Contact</p>
+        <p class="subtitle">Fan? Drop a note!</p>
+      </div>
+    </div>
+
   </div>
   </div>
 </body>
