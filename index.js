@@ -17,10 +17,13 @@ function hide() {
     search.style.transform = 'translateY(0px)'
 }
 
+let pop = document.getElementsByClassName('popup-bg')[0]
 function popup() {
-    document.getElementsByClassName('popup-bg')[0].style.display = 'block'
+    pop.style.visibility = 'visible'
+    pop.style.opacity = '1'
 }
 
 function cl() {
-    document.getElementsByClassName('popup-bg')[0].style.display = 'none'
+    pop.style.visibility = 'hidden'
+    pop.style.opacity = '0'
 }

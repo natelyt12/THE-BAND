@@ -152,28 +152,14 @@ body {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
   position: relative;
   overflow: hidden;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
+  cursor: pointer;
 }
-.buy::before {
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  content: "";
-  background-color: white;
-  border-radius: 50%;
-  left: -100%;
-  top: 0;
-  transition-duration: 0.3s;
-  mix-blend-mode: difference;
-}
-.buy:hover::before {
-  transition-duration: 0.3s;
-  transform: translate(100%, -50%);
-  border-radius: 0;
+.buy:hover {
+  transform: scale(0.95);
 }
 .buy:active {
-  transform: translatey(2px);
-  transition-duration: 0.1s;
+  transform: scale(0.9);
 }
 
 .svgIcon {
@@ -191,8 +177,9 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.281);
   z-index: 10;
-  display: none;
-  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.1s linear;
 }
 
 .popup-container {
@@ -230,6 +217,7 @@ body {
   border: none;
   transition: 0.1s;
   transform: scale(150%);
+  cursor: pointer;
 }
 .popup-container .header button:hover {
   color: rgb(218, 218, 218);
@@ -238,9 +226,54 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  /* Input container */
+  /* Input field */
+  /* Input label */
+  /* Input highlight */
+  /* Input field:focus styles */
 }
-.popup-container .pay-form input {
-  padding: 8px 10px;
+.popup-container .pay-form .input-container {
+  position: relative;
+  margin: 20px 30px 10px 0;
+}
+.popup-container .pay-form .input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+.popup-container .pay-form .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.popup-container .pay-form .input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+.popup-container .pay-form .input-field:focus + .input-label {
+  top: -10px;
+  font-size: 12px;
+  color: #000000;
+}
+.popup-container .pay-form .input-field:focus + .input-label + .input-highlight {
+  width: 105%;
+}
+.popup-container .pay-form .popup-desc {
+  margin: 0;
 }
 
 @media screen and (max-width: 550px) {

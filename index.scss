@@ -165,30 +165,15 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
     position: relative;
     overflow: hidden;
-    transition-duration: .3s;
+    transition-duration: .2s;
+    cursor: pointer;
 
-    &::before {
-        width: 120px;
-        height: 120px;
-        position: absolute;
-        content: "";
-        background-color: white;
-        border-radius: 50%;
-        left: -100%;
-        top: 0;
-        transition-duration: .3s;
-        mix-blend-mode: difference;
-    }
-
-    &:hover::before {
-        transition-duration: .3s;
-        transform: translate(100%, -50%);
-        border-radius: 0;
+    &:hover {
+        transform: scale(0.95);
     }
 
     &:active {
-        transform: translatey(2px);
-        transition-duration: .1s;
+        transform: scale(0.9);
     }
 }
 
@@ -206,35 +191,41 @@ body {
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.281);
-    z-index: 10;    
-    display: none;
-    transition: 0.5s;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.1s linear;
+
 }
 
-.popup-container{
+.popup-container {
     background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-    .header{
+
+    .header {
         position: relative;
         background-color: rgb(37, 37, 37);
         color: white;
-        i{
+
+        i {
             width: 36px;
             height: 36px;
             margin: 5px 10px 0 0;
         }
-        p{
+
+        p {
             padding: 40px 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
     }
-    .header button{
+
+    .header button {
         background: transparent;
         position: absolute;
         top: 0;
@@ -245,16 +236,72 @@ body {
         border: none;
         transition: 0.1s;
         transform: scale(150%);
-        &:hover{
+        cursor: pointer;
+
+        &:hover {
             color: rgb(218, 218, 218);
         }
     }
-    .pay-form{
+
+    .pay-form {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        input{
-            padding: 8px 10px;
+
+        /* Input container */
+        .input-container {
+            position: relative;
+            margin: 20px 30px 10px 0;
+        }
+
+        /* Input field */
+        .input-field {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            outline: none;
+            background-color: transparent;
+        }
+
+        /* Input label */
+        .input-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 16px;
+            color: rgba(204, 204, 204, 0);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Input highlight */
+        .input-highlight {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #000000;
+            transition: all 0.3s ease;
+        }
+
+        /* Input field:focus styles */
+        .input-field:focus+.input-label {
+            top: -10px;
+            font-size: 12px;
+            color: #000000;
+
+        }
+
+        .input-field:focus+.input-label+.input-highlight {
+            width: 105%;
+        }
+
+        .popup-desc {
+            margin: 0;
         }
     }
 }

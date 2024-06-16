@@ -26,7 +26,7 @@
       <a href="#">Home</a>
       <a href="#band">Band</a>
       <a href="#tour">Tour</a>
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
       <button type="button" class="dropdown" onmouseover="show()" onmouseout="hide()">More <i
           class="fi fi-rs-angle-small-right"></i>
         <div id="dropdown-menu">
@@ -127,19 +127,29 @@
     </div>
 
     <div class="popup-bg">
-        <div class="popup-container">
-          <div class="header">
-            <p class="title" style="text-transform: none;"><i class="fi fi-rs-ticket-alt"></i>Tickets</p>
-            <button type="button" onclick="cl()"><i class="fi fi-rs-circle-xmark"></i></button>
-          </div>
-          <form class="pay-form">
-            <label for="tickets">Tickets, $15 per person</label>
-            <input type="number" placeholder="How many?" name="tickets" required>
-            <label for="email">Send to</label>
-            <input type="email" name="email" required>
-            <button type="submit">Pay</button>
-          </form>
+      <div class="popup-container">
+        <div class="header">
+          <p class="title" style="text-transform: none;"><i class="fi fi-rs-ticket-alt"></i>Tickets</p>
+          <button type="button" onclick="cl()"><i class="fi fi-rs-circle-xmark"></i></button>
         </div>
+        <form class="pay-form">
+          <p class="popup-desc">Tickets, 15$ per person</p>
+          <div class="input-container">
+            <input placeholder="Enter quantity" class="input-field" type="number">
+            <label for="input-field" class="input-label">Enter the number of tickets you want to purchase</label>
+            <span class="input-highlight"></span>
+          </div>
+          <p class="popup-desc">Send to</p>
+          <div class="input-container">
+            <input placeholder="Enter email" class="input-field" type="email">
+            <label for="input-field" class="input-label">Enter the email address you want to send</label>
+            <span class="input-highlight"></span>
+          </div>
+          <button type="submit" class="buy" style="width: 100%;">PAY<i class="fi fi-rs-check-circle"
+              style="margin: 3px 0 0 5px; scale: 1.3;"></i></button>
+          <p>Need <a href="https://krunker.io">help?</a></p>
+        </form>
+      </div>
     </div>
 
     <div id="tour">
