@@ -360,6 +360,8 @@ footer {
     }
 
     .credit a {
+        display: inline;
+
         &:hover {
             right: 600px;
             color: black;
@@ -388,7 +390,9 @@ footer {
         width: 100% !important;
     }
 
-
+    .max-width {
+        box-sizing: border-box;
+    }
 }
 
 @media screen and (max-width: 768px) {

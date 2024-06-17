@@ -324,6 +324,9 @@ footer .social img:hover {
   cursor: pointer;
   opacity: 40%;
 }
+footer .credit a {
+  display: inline;
+}
 footer .credit a:hover {
   right: 600px;
   color: black;
@@ -343,6 +346,9 @@ footer .credit a:hover {
   .info-left,
   .message-right {
     width: 100% !important;
+  }
+  .max-width {
+    box-sizing: border-box;
   }
 }
 @media screen and (max-width: 768px) {
