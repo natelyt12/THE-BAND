@@ -4,6 +4,10 @@
   color: white;
 }
 
+.w50 {
+  width: 50% !important;
+}
+
 html {
   overflow-x: clip !important;
 }
@@ -226,17 +230,18 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  /* Input container */
-  /* Input field */
-  /* Input label */
-  /* Input highlight */
-  /* Input field:focus styles */
 }
-.popup-container .pay-form .input-container {
+.popup-container .pay-form .popup-desc {
+  margin: 0;
+}
+
+/* Input container */
+.input-container {
   position: relative;
   margin: 20px 30px 10px 0;
 }
-.popup-container .pay-form .input-field {
+
+.input-field {
   display: block;
   width: 100%;
   padding: 10px;
@@ -246,7 +251,8 @@ body {
   outline: none;
   background-color: transparent;
 }
-.popup-container .pay-form .input-label {
+
+.input-label {
   position: absolute;
   top: 0;
   left: 0;
@@ -255,7 +261,8 @@ body {
   pointer-events: none;
   transition: all 0.3s ease;
 }
-.popup-container .pay-form .input-highlight {
+
+.input-highlight {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -264,16 +271,63 @@ body {
   background-color: #000000;
   transition: all 0.3s ease;
 }
-.popup-container .pay-form .input-field:focus + .input-label {
+
+.input-field:focus + .input-label {
   top: -10px;
   font-size: 12px;
   color: #000000;
 }
-.popup-container .pay-form .input-field:focus + .input-label + .input-highlight {
+
+.input-field:focus + .input-label + .input-highlight {
   width: 105%;
 }
-.popup-container .pay-form .popup-desc {
-  margin: 0;
+
+/* Input container */
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.note-container .info-left {
+  width: 50%;
+}
+.note-container .info-left ul {
+  list-style-type: none;
+  text-align: left;
+}
+.note-container .info-left i {
+  margin-right: 5px;
+}
+.note-container .info-left li {
+  margin-bottom: 10px;
+}
+.note-container .message-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  width: 100%;
+  filter: grayscale(50%);
+}
+
+footer .max-width {
+  width: 100%;
+}
+footer .social img {
+  width: 25px;
+  opacity: 60%;
+  transition: 100ms linear;
+  margin: 0 5px;
+}
+footer .social img:hover {
+  cursor: pointer;
+  opacity: 40%;
+}
+footer .credit a:hover {
+  right: 600px;
+  color: black;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 550px) {
@@ -282,6 +336,13 @@ body {
   }
   .max-width {
     width: 100%;
+  }
+  .popup-container {
+    width: 350px;
+  }
+  .info-left,
+  .message-right {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 768px) {

@@ -13,6 +13,7 @@ $navblack: rgb(37, 37, 37);
     overflow: hidden;
     z-index: 3;
     transition: 0.5s;
+
     a,
     button {
         color: white;
@@ -62,6 +63,7 @@ $navblack: rgb(37, 37, 37);
 .search {
     display: flex;
     transition: 0.5s;
+
     input {
         padding: 5px 10px;
     }
@@ -73,12 +75,13 @@ $navblack: rgb(37, 37, 37);
     .input {
         font-size: 16px;
         padding: 10px 10px 10px 5px;
-        width: 200px;
+        width: 185px;
         border: none;
         display: block;
         background: transparent;
         color: white;
         margin-top: 3px;
+        border-bottom: 1px solid gray;
 
         &:focus {
             outline: none;
@@ -140,13 +143,15 @@ $navblack: rgb(37, 37, 37);
     }
 }
 
-.dropdown{
+.dropdown {
     position: relative;
-    i{
+
+    i {
         margin-top: 2px;
     }
 }
-#dropdown-menu{
+
+#dropdown-menu {
     position: absolute;
     top: 0;
     left: 100%;
@@ -157,7 +162,8 @@ $navblack: rgb(37, 37, 37);
     text-align: start;
     transition: 0.5s;
     transform: translateY(50px);
-    a{
+
+    a {
         color: white;
         height: fit-content;
     }
@@ -169,17 +175,18 @@ $navblack: rgb(37, 37, 37);
 
 
 @media screen and (max-width: 760px) {
+
     button,
     a {
         height: fit-content !important;
         display: flex;
     }
 
-    .navbar{
+    .navbar {
         overflow-x: auto;
     }
 
-    .search{
+    .search {
         position: absolute;
         right: 0;
     }
@@ -195,7 +202,7 @@ $navblack: rgb(37, 37, 37);
         flex-direction: column;
     }
 
-    #dropdown-menu{
+    #dropdown-menu {
         position: static;
     }
 }
