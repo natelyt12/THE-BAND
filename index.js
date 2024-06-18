@@ -18,12 +18,15 @@ function hide() {
 }
 
 let pop = document.getElementsByClassName('popup-bg')[0]
+let popcorn = document.getElementsByClassName('popup-container')[0]
 function popup() {
     pop.style.visibility = 'visible'
     pop.style.opacity = '1'
+    popcorn.style.transform = 'translate(-50%, -50%) scale(100%)'
 }
 
 function cl() {
     pop.style.visibility = 'hidden'
     pop.style.opacity = '0'
+    popcorn.style.transform = 'translate(-50%, -50%) scale(80%)'
 }

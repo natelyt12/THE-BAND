@@ -212,8 +212,9 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(80%);
     width: 500px;
+    transition: 0.4s;
 
     .header {
         position: relative;
