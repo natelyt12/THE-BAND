@@ -11,7 +11,6 @@ $lato: "Lato", sans-serif;
     width: 50% !important;
 }
 
-// code
 html {
     overflow-x: clip !important;
 }
@@ -136,9 +135,15 @@ body {
     background-color: #fff;
     text-align: start;
     margin: 10px;
+    overflow: hidden;
 
     img {
         width: 100%;
+        transition: 0.3s;
+
+        &:hover {
+            scale: 1.1;
+        }
     }
 }
 
@@ -361,10 +366,10 @@ footer {
 
     .credit a {
         display: inline;
+        color: black;
 
         &:hover {
             right: 600px;
-            color: black;
             text-decoration: none;
         }
     }
